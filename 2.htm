@@ -9,7 +9,7 @@
 
     <script type="text/javascript">
       //js goes here
-      var client = deepstream('wss://au.awg.nz:6020').login( {username: 'peter', password: 'sesame'}, function(success, data) {
+      var client = deepstream('au.awg.nz:6020').login( {username: 'peter', password: 'sesame'}, function(success, data) {
         if (success) {
           //alert("success");
           document.getElementById("connected").innerText="connected";
