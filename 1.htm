@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/1.1.1/deepstream.js"></script>
+  </head>
+  <body>
+    <div id="connected">?</div>
+    <input type="text" />
+
+    <script type="text/javascript">
+      //js goes here
+      var client = deepstream('au.awg.nz:6020').login( {username: 'peter', password: 'sesame'}, function(success, data) {
+        if (success) {
+          //alert("success");
+          document.getElementById("connected").innerText="connected";
+        } else {
+          alert(data);
+        }
+      } );
+var record = client.record.getRecord('some-name')
+
+var input = document.querySelector('input')
+
+input.onkeyup = (function() {
+  record.set('firstname', input.value)
+})
+
+record.subscribe('firstname', function(value) {
+  input.value = value
+})
+
+    </script>
+  </body>
+</html>
