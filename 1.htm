@@ -14,9 +14,10 @@
           //alert("success");
           document.getElementById("connected").innerText="connected";
         } else {
-          alert(data);
+          document.getElementById("connected").innerText="server not connected";
         }
       } );
+      
 var record = client.record.getRecord('some-name')
 
 var input = document.querySelector('input')
