@@ -28,7 +28,7 @@
           if (data.hasOwnProperty(prop))
             record.$set(prop, data[prop]);
       });
-      alert(record);
+      alert(JSON.stringify(record));
       return record;
     }
     var todo = new Vue({
