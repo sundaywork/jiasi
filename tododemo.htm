@@ -25,7 +25,7 @@
     function wrapRecord(record) {
       record.subscribe(function(data) {
         for (var prop in data)
-          //if (data.hasOwnProperty(prop))
+          if (data.hasOwnProperty(prop))
             record.$set(prop, data[prop]);
       });
       return record;
