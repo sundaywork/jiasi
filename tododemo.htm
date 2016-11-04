@@ -39,6 +39,9 @@
         toggle: function(ev) {
           if (ev.target.checked != undefined)
             todo.items[ev.targetVM.$index].set("done", ev.target.checked);
+            else {
+              todo.items[ev.targetVM.$index].set("done", !ev.target.checked);
+            }
         },
         newItem: function() {
           var name = "todos/" + ds.getUid();
