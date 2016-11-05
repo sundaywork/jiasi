@@ -24,11 +24,12 @@
     var list = ds.record.getList("todos");
     function wrapRecord(record) {
       record.subscribe(function(data) {
+        alert(JSON.stringify(data));
         for (var prop in data)
           if (data.hasOwnProperty(prop))
             record.$set(prop, data[prop]);
       });
-      alert(JSON.stringify(record));
+
       return record;
     }
     var todo = new Vue({
