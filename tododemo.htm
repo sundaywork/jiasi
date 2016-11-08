@@ -62,7 +62,7 @@
             var record = ds.record.getRecord(name);
             //alert("name="+name+",record="+record);
             record.whenReady(function() {
-              todo.items.push({text: record.text, done: record.done});
+              todo.items[name]={text: record.text, done: record.done};
             });
           });
         });
