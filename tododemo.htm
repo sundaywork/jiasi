@@ -60,6 +60,7 @@
         list.subscribe(function(data) {
           data.forEach(function(name) {
             var record = ds.record.getRecord(name);
+            alert("name="+name+",record="+record);
             record.whenReady(function() {
               todo.items.push(wrapRecord(record));
             });
