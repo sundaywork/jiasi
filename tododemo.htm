@@ -39,7 +39,7 @@
     var todo = new Vue({
       el: "#todolist",
       data: {
-        items: {}
+        items: []
       },
       methods: {
         toggle: function(ev) {
@@ -62,7 +62,9 @@
             var record = ds.record.getRecord(name);
             //alert("name="+name+",record="+record);
             record.whenReady(function() {
-              todo.items[name]={text: record.text, done: record.done};
+              var t={text: record.text, done: record.done};
+              alert(t);
+              todo.items.push(t);
             });
           });
         });
