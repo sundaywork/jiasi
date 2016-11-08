@@ -7,7 +7,7 @@
 
   <div id="todolist">
     <ul>
-      <li v-repeat="{{items}}" v-on="click: toggle">
+      <li v-repeat="items" v-on="click: toggle">
         <label>
           <input type="checkbox" checked="{{done}}">
           {{text}}
