@@ -28,8 +28,8 @@
         for (var prop in data)
           if (data.hasOwnProperty(prop)) {
             //alert(prop);alert(data[prop]);
-            record.$set(prop, data[prop]);
-            alert(record);
+            record.set(prop, data[prop]);
+            //alert(record);
           }
 
       });
@@ -63,8 +63,8 @@
             //alert("name="+name+",record="+record);
             record.whenReady(function() {
               var t={text: record.text, done: record.done};
-              alert(t);
-              todo.items.push(t);
+              //alert(t);
+              todo.items.push(wrapRecord(record));
             });
           });
         });
