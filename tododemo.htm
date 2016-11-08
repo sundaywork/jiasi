@@ -28,7 +28,7 @@
         for (var prop in data)
           if (data.hasOwnProperty(prop)) {
             //alert(prop);alert(data[prop]);
-            record.set(prop, data[prop]);
+            record.$set(prop, data[prop]);
             //alert(record);
           }
 
@@ -44,9 +44,9 @@
       methods: {
         toggle: function(ev) {
           if (ev.target.checked != undefined)
-            todo.items[ev.targetVM.$index].set("done", ev.target.checked);
+            todo.items[ev.targetVM.$index].$set("done", ev.target.checked);
             else {
-              todo.items[ev.targetVM.$index].set("done", !ev.target.checked);
+              todo.items[ev.targetVM.$index].$set("done", !ev.target.checked);
             }
         },
         newItem: function() {
